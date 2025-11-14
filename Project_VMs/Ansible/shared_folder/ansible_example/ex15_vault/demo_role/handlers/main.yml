@@ -1,0 +1,20 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for demo_role
+- name: Restart chronyd service
+  service:
+    name: chronyd
+    state: restarted
+
+
+- name: Restart sshd service on ubuntu
+  service:
+    name: ssh
+    state: restarted
+  when: ansible_distribution == "Ubuntu"
+
+- name: Restart sshd service on Centos
+  service:
+    name: sshd
+    state: restarted
+  when: ansible_distribution == "CentOS"

@@ -1,0 +1,237 @@
+2025-07-10 13:41:40,732 p=4355 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************
+2025-07-10 13:41:40,756 p=4355 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-07-10 13:41:49,626 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:41:49,626 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:49,694 p=4355 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************
+2025-07-10 13:41:54,281 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:54,332 p=4355 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************
+2025-07-10 13:41:57,746 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:57,773 p=4355 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************
+2025-07-10 13:42:01,598 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:42:01,622 p=4355 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************
+2025-07-10 13:42:01,636 p=4355 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-07-10 13:42:08,715 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:42:08,717 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:08,734 p=4355 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************
+2025-07-10 13:42:12,365 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:12,378 p=4355 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************
+2025-07-10 13:42:14,857 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:14,870 p=4355 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************
+2025-07-10 13:42:18,483 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:18,514 p=4355 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************
+2025-07-10 13:42:20,989 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:21,012 p=4355 u=vagrant n=ansible INFO| TASK [Create database user with name 'devops' and password '12345' with all database privileges] ***********************************************
+2025-07-10 13:42:23,478 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2025-07-10 13:42:23,479 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| db_VM                      : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 13:53:13,992 p=4488 u=vagrant n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context. mapping values are not allowed in this context
+  in "<unicode string>", line 7, column 13
+
+The error appears to be in '/home/vagrant/ansible/example6/playbook.yaml': line 7, column 13, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    dbname: devopsdb
+      dbuser: devops
+            ^ here
+
+2025-07-10 13:53:46,395 p=4493 u=vagrant n=ansible INFO| PLAY [Setup Webserver] ******************************************************************************************************
+2025-07-10 13:53:46,429 p=4493 u=vagrant n=ansible INFO| TASK [Gathering Facts] ******************************************************************************************************
+2025-07-10 13:53:56,664 p=4493 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:53:56,670 p=4493 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:53:56,777 p=4493 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] **************************************************************************************************
+2025-07-10 13:54:01,606 p=4493 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:54:01,642 p=4493 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ********************************************************************************************
+2025-07-10 13:54:05,868 p=4493 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:54:05,929 p=4493 u=vagrant n=ansible INFO| TASK [Updated index.html file] **********************************************************************************************
+2025-07-10 13:54:10,147 p=4493 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:54:10,160 p=4493 u=vagrant n=ansible INFO| PLAY [setup database server] ************************************************************************************************
+2025-07-10 13:54:10,172 p=4493 u=vagrant n=ansible INFO| TASK [Gathering Facts] ******************************************************************************************************
+2025-07-10 13:54:17,168 p=4493 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future
+installation of another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:54:17,169 p=4493 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:54:17,182 p=4493 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] *************************************************************************************
+2025-07-10 13:54:20,791 p=4493 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:54:20,804 p=4493 u=vagrant n=ansible INFO| TASK [To enable service] ****************************************************************************************************
+2025-07-10 13:54:24,246 p=4493 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:54:24,275 p=4493 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] ******************************************************************************************
+2025-07-10 13:54:27,733 p=4493 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:54:27,748 p=4493 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] ***************************************************************************
+2025-07-10 13:54:27,810 p=4493 u=vagrant n=ansible INFO| fatal: [db_VM]: FAILED! => {"msg": "The task includes an option with an undefined variable.. 'dbname' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/example6/playbook.yaml': line 51, column 8, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n     - name: Create a new database with name 'devopsdb'\n       ^ here\n"}
+2025-07-10 13:54:27,815 p=4493 u=vagrant n=ansible INFO| PLAY RECAP ******************************************************************************************************************
+2025-07-10 13:54:27,822 p=4493 u=vagrant n=ansible INFO| db_VM                      : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-07-10 13:54:27,824 p=4493 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:01:35,386 p=4701 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************************
+2025-07-10 14:01:35,406 p=4701 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:01:42,287 p=4701 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:01:42,289 p=4701 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:01:42,383 p=4701 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************************
+2025-07-10 14:01:46,067 p=4701 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:01:46,118 p=4701 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************************
+2025-07-10 14:01:49,294 p=4701 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:01:49,309 p=4701 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************************
+2025-07-10 14:01:52,786 p=4701 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:01:52,808 p=4701 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************************
+2025-07-10 14:01:52,829 p=4701 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:01:59,082 p=4701 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:01:59,082 p=4701 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:01:59,096 p=4701 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************************
+2025-07-10 14:02:03,183 p=4701 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:02:03,197 p=4701 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************************
+2025-07-10 14:02:05,736 p=4701 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:02:05,751 p=4701 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************************
+2025-07-10 14:02:09,338 p=4701 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:02:09,351 p=4701 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************************
+2025-07-10 14:02:09,394 p=4701 u=vagrant n=ansible INFO| fatal: [db_VM]: FAILED! => {"msg": "The task includes an option with an undefined variable.. 'dbname' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/example6/playbook.yaml': line 51, column 8, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n     - name: Create a new database with name 'devopsdb'\n       ^ here\n"}
+2025-07-10 14:02:09,397 p=4701 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************************
+2025-07-10 14:02:09,397 p=4701 u=vagrant n=ansible INFO| db_VM                      : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:02:09,398 p=4701 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:04:53,488 p=4801 u=vagrant n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 10, column 5
+did not find expected key
+  in "<unicode string>", line 13, column 5
+
+The error appears to be in '/home/vagrant/ansible/example6/playbook.yaml': line 13, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - debug:
+    ^ here
+
+2025-07-10 14:05:18,213 p=4810 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************************
+2025-07-10 14:05:18,239 p=4810 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:05:24,541 p=4810 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:05:24,542 p=4810 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:05:24,661 p=4810 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:05:24,712 p=4810 u=vagrant n=ansible INFO| ok: [web_VM] => {
+    "dbaname": "VARIABLE IS NOT DEFINED!"
+}
+2025-07-10 14:05:24,730 p=4810 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:05:24,792 p=4810 u=vagrant n=ansible INFO| ok: [web_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-10 14:05:24,804 p=4810 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************************
+2025-07-10 14:05:28,758 p=4810 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:05:28,770 p=4810 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************************
+2025-07-10 14:05:31,611 p=4810 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:05:31,642 p=4810 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************************
+2025-07-10 14:05:35,345 p=4810 u=vagrant n=ansible ERROR|  [ERROR]: User interrupted execution
+
+2025-07-10 14:06:42,191 p=4862 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************************
+2025-07-10 14:06:42,215 p=4862 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:06:49,847 p=4862 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:06:49,852 p=4862 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:06:49,945 p=4862 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:06:49,995 p=4862 u=vagrant n=ansible INFO| ok: [web_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-10 14:06:50,025 p=4862 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:06:50,100 p=4862 u=vagrant n=ansible INFO| ok: [web_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-10 14:06:50,119 p=4862 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************************
+2025-07-10 14:06:53,912 p=4862 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:06:53,925 p=4862 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************************
+2025-07-10 14:06:56,295 p=4862 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:06:56,332 p=4862 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************************
+2025-07-10 14:06:59,688 p=4862 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:06:59,694 p=4862 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************************
+2025-07-10 14:06:59,696 p=4862 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:07:04,697 p=4862 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:07:04,700 p=4862 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:07:04,715 p=4862 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************************
+2025-07-10 14:07:08,087 p=4862 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:07:08,126 p=4862 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************************
+2025-07-10 14:07:10,269 p=4862 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:07:10,283 p=4862 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************************
+2025-07-10 14:07:13,794 p=4862 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:07:13,808 p=4862 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************************
+2025-07-10 14:07:13,877 p=4862 u=vagrant n=ansible INFO| fatal: [db_VM]: FAILED! => {"msg": "The task includes an option with an undefined variable.. 'dbname' is undefined\n\nThe error appears to be in '/home/vagrant/ansible/example6/playbook.yaml': line 56, column 8, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n\n     - name: Create a new database with name 'devopsdb'\n       ^ here\n"}
+2025-07-10 14:07:13,881 p=4862 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************************
+2025-07-10 14:07:13,881 p=4862 u=vagrant n=ansible INFO| db_VM                      : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:07:13,881 p=4862 u=vagrant n=ansible INFO| web_VM                     : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:12:58,941 p=4958 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************************
+2025-07-10 14:12:58,964 p=4958 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:13:05,681 p=4958 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:13:05,682 p=4958 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:13:05,783 p=4958 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************************
+2025-07-10 14:13:09,609 p=4958 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:13:09,622 p=4958 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************************
+2025-07-10 14:13:12,209 p=4958 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:13:12,249 p=4958 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************************
+2025-07-10 14:13:15,666 p=4958 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 14:13:15,676 p=4958 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************************
+2025-07-10 14:13:15,693 p=4958 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:13:22,012 p=4958 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:13:22,014 p=4958 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:13:22,028 p=4958 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:13:22,076 p=4958 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-10 14:13:22,100 p=4958 u=vagrant n=ansible INFO| TASK [debug] ***********************************************************************************************************************************************
+2025-07-10 14:13:22,158 p=4958 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-10 14:13:22,186 p=4958 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************************
+2025-07-10 14:13:25,500 p=4958 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:13:25,521 p=4958 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************************
+2025-07-10 14:13:27,747 p=4958 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:13:27,760 p=4958 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************************
+2025-07-10 14:13:31,109 p=4958 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:13:31,120 p=4958 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************************
+2025-07-10 14:13:33,218 p=4958 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:13:33,233 p=4958 u=vagrant n=ansible INFO| TASK [Create database user with name 'devops' and password '12345' with all database privileges] ***********************************************************
+2025-07-10 14:13:35,514 p=4958 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to
+true in community.mysql 4.0.0.
+
+2025-07-10 14:13:35,515 p=4958 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-10 14:13:35,519 p=4958 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************************
+2025-07-10 14:13:35,520 p=4958 u=vagrant n=ansible INFO| db_VM                      : ok=8    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:13:35,522 p=4958 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

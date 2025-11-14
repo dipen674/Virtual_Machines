@@ -1,0 +1,6 @@
+vm1 ansible_host=192.168.56.211 ansible_user=vagrant ansible_password=vagrant
+
+
+[webservergrp]
+vm1
+vm2

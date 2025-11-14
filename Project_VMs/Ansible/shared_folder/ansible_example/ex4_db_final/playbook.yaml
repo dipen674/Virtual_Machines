@@ -1,0 +1,59 @@
+---
+- name: Setup Webserver             #Defining name of the service
+  hosts: web_VM                        #Mentioning which host we are using
+  become: true                      #Providing sudo permission
+  tasks:                            #Defining tasks
+    - name: Install apache2 pkg     #Giving a name to the task
+      apt:                          #Defining module Which module we want to use
+        name: apache2               #Which service
+        state: present              #In which state we want the service
+    - name: To enable apache2 service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+    - name: Updated index.html file
+      copy:
+        src: index.html
+        dest: /var/www/html/
+
+
+- name: setup database server
+  hosts: dbser
+  become: true
+  tasks:
+    
+
+     - name: Install mariadb pkg on db server
+       apt:
+         name: mariadb-server
+         state: present
+
+     - name: To enable service
+       service:
+         name: mariadb
+         state: started
+         enabled: yes
+
+
+     - name: Install python3-pymysql pkg
+       apt:
+         name: python3-pymysql
+         state: present
+           #autoremove: yes
+           #purge: yes
+
+
+     - name: Create a new database with name 'devopsdb'
+       mysql_db:
+         name: devopsdb
+         state: present
+         login_unix_socket: /run/mysqld/mysqld.sock
+
+     - name: Create database user with name 'devops' and password '12345' with all database privileges
+       mysql_user:
+         name: devops
+         password: 12345
+         priv: '*.*:ALL'
+         state: present
+         login_unix_socket: /run/mysqld/mysqld.sock

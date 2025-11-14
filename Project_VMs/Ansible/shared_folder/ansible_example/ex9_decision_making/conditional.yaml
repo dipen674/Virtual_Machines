@@ -1,0 +1,16 @@
+---
+- name: Conditionals Practice
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install apt ackages
+      apt:
+        name: apache2
+        state: present
+      when: ansible_distribution == "Ubuntu"
+
+    - name: Install yum packages
+      yum:
+        name: mariadb-server
+        state: present
+      when: ansible_distribution == "CentOS"

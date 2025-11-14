@@ -1,0 +1,1541 @@
+2025-07-17 06:15:57,417 p=2126 u=vagrant n=ansible INFO| - Role demo_role was created successfully
+2025-07-17 07:40:16,511 p=2954 u=vagrant n=ansible INFO| PLAY [Provision server] **********************************************************************************************************************
+2025-07-17 07:40:16,552 p=2954 u=vagrant n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************
+2025-07-17 07:40:18,001 p=2954 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:40:18,001 p=2954 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:40:18,032 p=2954 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:40:18,033 p=2954 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:40:28,119 p=2954 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:40:28,120 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:40:28,132 p=2954 u=vagrant n=ansible INFO| TASK [Install NTP server on Ubuntu] **********************************************************************************************************
+2025-07-17 07:40:28,168 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=chrony) 
+2025-07-17 07:40:28,169 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=wget) 
+2025-07-17 07:40:28,170 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=git) 
+2025-07-17 07:40:28,172 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=zip) 
+2025-07-17 07:40:28,176 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=unzip) 
+2025-07-17 07:40:28,178 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:40:40,314 p=2954 u=vagrant n=ansible INFO| ok: [db_VM] => (item=chrony)
+2025-07-17 07:40:41,056 p=2954 u=vagrant n=ansible INFO| ok: [web_VM] => (item=chrony)
+2025-07-17 07:40:42,508 p=2954 u=vagrant n=ansible INFO| ok: [db_VM] => (item=wget)
+2025-07-17 07:40:43,203 p=2954 u=vagrant n=ansible INFO| ok: [web_VM] => (item=wget)
+2025-07-17 07:40:44,511 p=2954 u=vagrant n=ansible INFO| ok: [db_VM] => (item=git)
+2025-07-17 07:40:45,298 p=2954 u=vagrant n=ansible INFO| ok: [web_VM] => (item=git)
+2025-07-17 07:40:46,492 p=2954 u=vagrant n=ansible INFO| ok: [db_VM] => (item=zip)
+2025-07-17 07:40:47,385 p=2954 u=vagrant n=ansible INFO| ok: [web_VM] => (item=zip)
+2025-07-17 07:40:48,620 p=2954 u=vagrant n=ansible INFO| ok: [db_VM] => (item=unzip)
+2025-07-17 07:40:49,356 p=2954 u=vagrant n=ansible INFO| ok: [web_VM] => (item=unzip)
+2025-07-17 07:40:49,362 p=2954 u=vagrant n=ansible INFO| TASK [Install NTP server on CentOS] **********************************************************************************************************
+2025-07-17 07:40:49,378 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=chrony) 
+2025-07-17 07:40:49,381 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=wget) 
+2025-07-17 07:40:49,383 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=git) 
+2025-07-17 07:40:49,384 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=zip) 
+2025-07-17 07:40:49,389 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=unzip) 
+2025-07-17 07:40:49,392 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 07:40:49,395 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=chrony) 
+2025-07-17 07:40:49,397 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=wget) 
+2025-07-17 07:40:49,401 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=git) 
+2025-07-17 07:40:49,404 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=zip) 
+2025-07-17 07:40:49,407 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=unzip) 
+2025-07-17 07:40:49,409 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 07:40:52,736 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=chrony)
+2025-07-17 07:40:53,367 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=wget)
+2025-07-17 07:40:54,041 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=git)
+2025-07-17 07:40:54,523 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=zip)
+2025-07-17 07:40:55,109 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=unzip)
+2025-07-17 07:40:55,116 p=2954 u=vagrant n=ansible INFO| TASK [Start and Enable chronyd service on Debian and CentOS] *********************************************************************************
+2025-07-17 07:40:55,141 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:40:55,715 p=2954 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:40:55,718 p=2954 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:40:55,723 p=2954 u=vagrant n=ansible INFO| TASK [Update chrony template on Ubuntu] ******************************************************************************************************
+2025-07-17 07:40:55,762 p=2954 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:40:56,292 p=2954 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:40:56,292 p=2954 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:40:56,296 p=2954 u=vagrant n=ansible INFO| TASK [Update chrony template on CentOS] ******************************************************************************************************
+2025-07-17 07:40:56,312 p=2954 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 07:40:56,313 p=2954 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 07:40:56,970 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:40:56,974 p=2954 u=vagrant n=ansible INFO| TASK [Add SSH banner] ************************************************************************************************************************
+2025-07-17 07:40:57,383 p=2954 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:40:57,387 p=2954 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:40:57,448 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:40:57,453 p=2954 u=vagrant n=ansible INFO| TASK [Update sshd_config for ssh bannner] ****************************************************************************************************
+2025-07-17 07:40:57,754 p=2954 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:40:57,757 p=2954 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:40:57,775 p=2954 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:40:57,779 p=2954 u=vagrant n=ansible INFO| TASK [Add group devopsgrp] *******************************************************************************************************************
+2025-07-17 07:40:58,127 p=2954 u=vagrant n=ansible INFO| changed: [web_VM]
+2025-07-17 07:40:58,129 p=2954 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 07:40:58,248 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1]
+2025-07-17 07:40:58,265 p=2954 u=vagrant n=ansible INFO| TASK [Add multiple_users] ********************************************************************************************************************
+2025-07-17 07:40:58,740 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 07:40:58,754 p=2954 u=vagrant n=ansible INFO| changed: [web_VM] => (item=user1)
+2025-07-17 07:40:58,758 p=2954 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 07:40:59,003 p=2954 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 07:40:59,003 p=2954 u=vagrant n=ansible INFO| changed: [web_VM] => (item=user2)
+2025-07-17 07:40:59,033 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 07:40:59,271 p=2954 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 07:40:59,274 p=2954 u=vagrant n=ansible INFO| changed: [web_VM] => (item=user3)
+2025-07-17 07:40:59,335 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 07:40:59,519 p=2954 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 07:40:59,527 p=2954 u=vagrant n=ansible INFO| changed: [web_VM] => (item=user4)
+2025-07-17 07:40:59,617 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 07:40:59,803 p=2954 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 07:40:59,816 p=2954 u=vagrant n=ansible INFO| changed: [web_VM] => (item=user5)
+2025-07-17 07:40:59,900 p=2954 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 07:40:59,903 p=2954 u=vagrant n=ansible WARNING| [WARNING]: Could not match supplied host pattern, ignoring: dbser
+
+2025-07-17 07:40:59,904 p=2954 u=vagrant n=ansible INFO| PLAY [setup database server] *****************************************************************************************************************
+2025-07-17 07:40:59,904 p=2954 u=vagrant n=ansible INFO| skipping: no hosts matched
+2025-07-17 07:40:59,905 p=2954 u=vagrant n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************
+2025-07-17 07:40:59,906 p=2954 u=vagrant n=ansible INFO| centosvm1                  : ok=7    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2025-07-17 07:40:59,906 p=2954 u=vagrant n=ansible INFO| db_VM                      : ok=8    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2025-07-17 07:40:59,907 p=2954 u=vagrant n=ansible INFO| web_VM                     : ok=8    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2025-07-17 07:41:48,001 p=3368 u=vagrant n=ansible INFO| PLAY [Provision server] **********************************************************************************************************************
+2025-07-17 07:41:48,010 p=3368 u=vagrant n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************
+2025-07-17 07:41:48,978 p=3368 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:41:48,978 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:41:48,988 p=3368 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:41:48,989 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:41:59,146 p=3368 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 07:41:59,147 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:41:59,155 p=3368 u=vagrant n=ansible INFO| TASK [Install NTP server on Ubuntu] **********************************************************************************************************
+2025-07-17 07:41:59,189 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=chrony) 
+2025-07-17 07:41:59,192 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=wget) 
+2025-07-17 07:41:59,192 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=git) 
+2025-07-17 07:41:59,193 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=zip) 
+2025-07-17 07:41:59,195 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=unzip) 
+2025-07-17 07:41:59,196 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:42:01,242 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=chrony)
+2025-07-17 07:42:01,295 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=chrony)
+2025-07-17 07:42:03,242 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=wget)
+2025-07-17 07:42:03,342 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=wget)
+2025-07-17 07:42:05,271 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=git)
+2025-07-17 07:42:05,362 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=git)
+2025-07-17 07:42:07,220 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=zip)
+2025-07-17 07:42:07,371 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=zip)
+2025-07-17 07:42:09,275 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=unzip)
+2025-07-17 07:42:10,948 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=unzip)
+2025-07-17 07:42:10,954 p=3368 u=vagrant n=ansible INFO| TASK [Install NTP server on CentOS] **********************************************************************************************************
+2025-07-17 07:42:10,969 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=chrony) 
+2025-07-17 07:42:10,970 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=wget) 
+2025-07-17 07:42:10,971 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=git) 
+2025-07-17 07:42:10,972 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=zip) 
+2025-07-17 07:42:10,976 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=unzip) 
+2025-07-17 07:42:10,980 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=chrony) 
+2025-07-17 07:42:10,981 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=wget) 
+2025-07-17 07:42:10,982 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 07:42:10,983 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=git) 
+2025-07-17 07:42:10,985 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=zip) 
+2025-07-17 07:42:10,987 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=unzip) 
+2025-07-17 07:42:10,989 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 07:42:11,737 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=chrony)
+2025-07-17 07:42:12,249 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=wget)
+2025-07-17 07:42:12,921 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=git)
+2025-07-17 07:42:13,415 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=zip)
+2025-07-17 07:42:13,925 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=unzip)
+2025-07-17 07:42:13,931 p=3368 u=vagrant n=ansible INFO| TASK [Start and Enable chronyd service on Debian and CentOS] *********************************************************************************
+2025-07-17 07:42:13,971 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:42:14,445 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:14,446 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:42:14,450 p=3368 u=vagrant n=ansible INFO| TASK [Update chrony template on Ubuntu] ******************************************************************************************************
+2025-07-17 07:42:14,469 p=3368 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 07:42:14,886 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:14,888 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:42:14,893 p=3368 u=vagrant n=ansible INFO| TASK [Update chrony template on CentOS] ******************************************************************************************************
+2025-07-17 07:42:14,910 p=3368 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 07:42:14,911 p=3368 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 07:42:15,520 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:42:15,525 p=3368 u=vagrant n=ansible INFO| TASK [Add SSH banner] ************************************************************************************************************************
+2025-07-17 07:42:15,898 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:42:15,899 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:15,971 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:42:15,981 p=3368 u=vagrant n=ansible INFO| TASK [Update sshd_config for ssh bannner] ****************************************************************************************************
+2025-07-17 07:42:16,285 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:16,292 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:42:16,314 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:42:16,320 p=3368 u=vagrant n=ansible INFO| TASK [Add group devopsgrp] *******************************************************************************************************************
+2025-07-17 07:42:16,621 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:16,629 p=3368 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 07:42:16,648 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 07:42:16,652 p=3368 u=vagrant n=ansible INFO| TASK [Add multiple_users] ********************************************************************************************************************
+2025-07-17 07:42:17,012 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 07:42:17,012 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user1)
+2025-07-17 07:42:17,036 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user1)
+2025-07-17 07:42:17,313 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 07:42:17,325 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user2)
+2025-07-17 07:42:17,414 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user2)
+2025-07-17 07:42:17,628 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 07:42:17,637 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user3)
+2025-07-17 07:42:17,763 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user3)
+2025-07-17 07:42:17,898 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 07:42:17,912 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user4)
+2025-07-17 07:42:18,062 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user4)
+2025-07-17 07:42:18,149 p=3368 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 07:42:18,165 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user5)
+2025-07-17 07:42:18,332 p=3368 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user5)
+2025-07-17 07:42:18,335 p=3368 u=vagrant n=ansible INFO| PLAY [setup database server] *****************************************************************************************************************
+2025-07-17 07:42:18,340 p=3368 u=vagrant n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************
+2025-07-17 07:42:19,390 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:19,402 p=3368 u=vagrant n=ansible INFO| TASK [debug] *********************************************************************************************************************************
+2025-07-17 07:42:19,443 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 07:42:19,460 p=3368 u=vagrant n=ansible INFO| TASK [debug] *********************************************************************************************************************************
+2025-07-17 07:42:19,485 p=3368 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 07:42:19,492 p=3368 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ******************************************************************************************************
+2025-07-17 07:42:44,497 p=3368 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 07:42:44,502 p=3368 u=vagrant n=ansible INFO| TASK [To enable service] *********************************************************************************************************************
+2025-07-17 07:42:44,988 p=3368 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 07:42:44,993 p=3368 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] ***********************************************************************************************************
+2025-07-17 07:42:48,433 p=3368 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 07:42:48,438 p=3368 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] ********************************************************************************************
+2025-07-17 07:42:48,816 p=3368 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 07:42:48,821 p=3368 u=vagrant n=ansible INFO| TASK [Create database user with name 'devops' and password '12345' with all database privileges] *********************************************
+2025-07-17 07:42:49,275 p=3368 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will
+be changed to true in community.mysql 4.0.0.
+
+2025-07-17 07:42:49,276 p=3368 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 07:42:49,279 p=3368 u=vagrant n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************
+2025-07-17 07:42:49,279 p=3368 u=vagrant n=ansible INFO| centosvm1                  : ok=7    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2025-07-17 07:42:49,280 p=3368 u=vagrant n=ansible INFO| db_VM                      : ok=16   changed=4    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2025-07-17 07:42:49,280 p=3368 u=vagrant n=ansible INFO| web_VM                     : ok=8    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2025-07-17 08:29:00,462 p=4296 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] ****************************************************************************************************
+2025-07-17 08:29:00,468 p=4296 u=vagrant n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************
+2025-07-17 08:29:01,962 p=4296 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:29:01,963 p=4296 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:29:01,965 p=4296 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:29:01,965 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:11,796 p=4296 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of
+another Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:29:11,796 p=4296 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:29:11,801 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : debug] *********************************************************************************************************************
+2025-07-17 08:29:11,815 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:11,819 p=4296 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:29:11,820 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:11,824 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : debug] *********************************************************************************************************************
+2025-07-17 08:29:11,845 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:11,851 p=4296 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:29:11,857 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:11,867 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] ******************************************************************************************
+2025-07-17 08:29:11,892 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:11,899 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:12,441 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:12,447 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] *********************************************************************************************************
+2025-07-17 08:29:12,460 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:12,469 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:12,932 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:12,936 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ***********************************************************************************************
+2025-07-17 08:29:12,950 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:12,956 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:13,526 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:13,532 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] ********************************************************************************
+2025-07-17 08:29:13,549 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:13,561 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:13,938 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:13,943 p=4296 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] *********************************
+2025-07-17 08:29:13,959 p=4296 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:29:13,969 p=4296 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:29:14,328 p=4296 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will
+be changed to true in community.mysql 4.0.0.
+
+2025-07-17 08:29:14,328 p=4296 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:29:14,338 p=4296 u=vagrant n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************
+2025-07-17 08:29:14,339 p=4296 u=vagrant n=ansible INFO| centosvm1                  : ok=1    changed=0    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2025-07-17 08:29:14,339 p=4296 u=vagrant n=ansible INFO| db_VM                      : ok=8    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 08:29:14,339 p=4296 u=vagrant n=ansible INFO| web_VM                     : ok=1    changed=0    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2025-07-17 08:32:41,681 p=4438 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 08:32:41,687 p=4438 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 08:32:42,923 p=4438 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:32:42,925 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:42,960 p=4438 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:32:42,960 p=4438 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:32:53,022 p=4438 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:32:53,023 p=4438 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:32:53,039 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:32:53,088 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:53,094 p=4438 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:32:53,097 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:53,102 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:32:53,116 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:53,121 p=4438 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:32:53,123 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:53,127 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 08:32:53,145 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:53,147 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:53,772 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:53,779 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 08:32:53,794 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:53,802 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:54,233 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:54,238 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 08:32:54,260 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:54,273 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:54,945 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:54,951 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 08:32:54,966 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:54,979 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:55,279 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:55,285 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 08:32:55,301 p=4438 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:32:55,311 p=4438 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:32:55,714 p=4438 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 08:32:55,715 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:55,721 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 08:32:56,246 p=4438 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:32:56,248 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:56,266 p=4438 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:32:56,271 p=4438 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 08:32:56,541 p=4438 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:32:56,543 p=4438 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:32:56,564 p=4438 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:32:56,573 p=4438 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 08:32:56,574 p=4438 u=vagrant n=ansible INFO| centosvm1                  : ok=3    changed=0    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2025-07-17 08:32:56,575 p=4438 u=vagrant n=ansible INFO| db_VM                      : ok=10   changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 08:32:56,575 p=4438 u=vagrant n=ansible INFO| web_VM                     : ok=3    changed=0    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2025-07-17 08:39:08,611 p=4655 u=vagrant n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context. mapping values are not allowed in this context
+  in "<unicode string>", line 11, column 12
+
+The error appears to be in '/home/vagrant/shared_folder/ex14_roles/demo_role/handlers/main.yml': line 11, column 12, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+- name: Restart sshd service on ubuntu
+    service:
+           ^ here
+
+2025-07-17 08:40:02,784 p=4675 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 08:40:02,791 p=4675 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 08:40:04,001 p=4675 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:40:04,001 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:04,025 p=4675 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:40:04,026 p=4675 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:40:13,983 p=4675 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:40:13,983 p=4675 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:40:13,988 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:40:14,027 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:14,037 p=4675 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:40:14,040 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:14,054 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:40:14,107 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:14,117 p=4675 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:40:14,119 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:14,128 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 08:40:14,158 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:14,180 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:14,986 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:14,990 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 08:40:15,003 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:15,010 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:15,525 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:15,530 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 08:40:15,544 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:15,579 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:16,236 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:16,243 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 08:40:16,258 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:16,264 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:16,556 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:16,561 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 08:40:16,577 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:16,591 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:16,941 p=4675 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 08:40:16,941 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:16,948 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 08:40:17,488 p=4675 u=vagrant n=ansible INFO| changed: [web_VM]
+2025-07-17 08:40:17,492 p=4675 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 08:40:17,513 p=4675 u=vagrant n=ansible INFO| changed: [centosvm1]
+2025-07-17 08:40:17,518 p=4675 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 08:40:17,783 p=4675 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:40:17,786 p=4675 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:40:17,810 p=4675 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:40:17,825 p=4675 u=vagrant n=ansible INFO| RUNNING HANDLER [demo_role : Restart sshd service on ubuntu] **********************************************************************************************************
+2025-07-17 08:40:17,851 p=4675 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:40:18,244 p=4675 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 08:40:18,248 p=4675 u=vagrant n=ansible INFO| changed: [web_VM]
+2025-07-17 08:40:18,252 p=4675 u=vagrant n=ansible INFO| RUNNING HANDLER [demo_role : Restart sshd service on Centos] **********************************************************************************************************
+2025-07-17 08:40:18,269 p=4675 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:40:18,270 p=4675 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 08:40:18,783 p=4675 u=vagrant n=ansible INFO| changed: [centosvm1]
+2025-07-17 08:40:18,784 p=4675 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 08:40:18,785 p=4675 u=vagrant n=ansible INFO| centosvm1                  : ok=4    changed=2    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:40:18,785 p=4675 u=vagrant n=ansible INFO| db_VM                      : ok=11   changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-07-17 08:40:18,785 p=4675 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=2    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:51:19,405 p=4973 u=vagrant n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 6, column 3
+did not find expected key
+  in "<unicode string>", line 10, column 24
+
+The error appears to be in '/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/useradd.yaml': line 10, column 24, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    group: devopsgrp
+  loop: "{{usernames}}"i
+                       ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2025-07-17 08:51:52,774 p=4984 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 08:51:52,782 p=4984 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 08:51:54,017 p=4984 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:51:54,017 p=4984 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:51:54,018 p=4984 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:51:54,019 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:03,974 p=4984 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:52:03,974 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:52:03,979 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:52:04,011 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:04,021 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:52:04,024 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:04,032 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:52:04,045 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:04,057 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:52:04,060 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:04,065 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 08:52:04,083 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:04,091 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:04,780 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:04,785 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 08:52:04,800 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:04,807 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:05,460 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:05,465 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 08:52:05,488 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:05,500 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:06,134 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:06,140 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 08:52:06,153 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:06,158 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:06,545 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:06,550 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 08:52:06,563 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:06,568 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:06,918 p=4984 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 08:52:06,919 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:06,923 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 08:52:07,403 p=4984 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:52:07,412 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:07,446 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:52:07,456 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 08:52:07,775 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:07,782 p=4984 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:52:07,802 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:52:07,807 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 08:52:08,106 p=4984 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:52:08,109 p=4984 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:52:08,126 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:52:08,130 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 08:52:08,492 p=4984 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 08:52:08,496 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user1)
+2025-07-17 08:52:08,513 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user1)
+2025-07-17 08:52:08,732 p=4984 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 08:52:08,733 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user2)
+2025-07-17 08:52:08,804 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user2)
+2025-07-17 08:52:08,976 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user3)
+2025-07-17 08:52:08,981 p=4984 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 08:52:09,070 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user3)
+2025-07-17 08:52:09,216 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user4)
+2025-07-17 08:52:09,218 p=4984 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 08:52:09,348 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user4)
+2025-07-17 08:52:09,454 p=4984 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 08:52:09,458 p=4984 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user5)
+2025-07-17 08:52:09,617 p=4984 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user5)
+2025-07-17 08:52:09,621 p=4984 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 08:52:09,633 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 08:52:09,636 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 08:52:09,647 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 08:52:09,653 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 08:52:09,656 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 08:52:09,657 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 08:52:09,660 p=4984 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:52:09,662 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 08:52:09,663 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 08:52:09,665 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 08:52:09,665 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 08:52:09,667 p=4984 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 08:52:09,670 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 08:52:09,672 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 08:52:09,674 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 08:52:09,677 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 08:52:09,679 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 08:52:09,680 p=4984 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:52:09,692 p=4984 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 08:52:09,693 p=4984 u=vagrant n=ansible INFO| centosvm1                  : ok=5    changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:52:09,694 p=4984 u=vagrant n=ansible INFO| db_VM                      : ok=12   changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-07-17 08:52:09,694 p=4984 u=vagrant n=ansible INFO| web_VM                     : ok=5    changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:55:20,960 p=5310 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 08:55:20,968 p=5310 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 08:55:22,198 p=5310 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:55:22,198 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:22,213 p=5310 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:55:22,214 p=5310 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:55:32,222 p=5310 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:55:32,223 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:55:32,229 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:55:32,251 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:32,255 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:55:32,257 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:32,261 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:55:32,276 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:32,279 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:55:32,281 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:32,284 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 08:55:32,296 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:32,301 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:32,919 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:32,925 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 08:55:32,941 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:32,949 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:33,436 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:33,440 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 08:55:33,456 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:33,466 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:34,095 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:34,101 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 08:55:34,116 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:34,124 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:34,542 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:34,548 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 08:55:34,564 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:34,575 p=5310 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:55:34,948 p=5310 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 08:55:34,948 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:34,954 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 08:55:35,457 p=5310 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:55:35,459 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:35,481 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:55:35,486 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 08:55:35,744 p=5310 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:55:35,757 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:35,775 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:55:35,780 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 08:55:36,062 p=5310 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:55:36,065 p=5310 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:55:36,088 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:55:36,095 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 08:55:36,418 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user1)
+2025-07-17 08:55:36,419 p=5310 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 08:55:36,429 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user1)
+2025-07-17 08:55:36,676 p=5310 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 08:55:36,680 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user2)
+2025-07-17 08:55:36,734 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user2)
+2025-07-17 08:55:36,932 p=5310 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 08:55:36,938 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user3)
+2025-07-17 08:55:37,022 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user3)
+2025-07-17 08:55:37,175 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user4)
+2025-07-17 08:55:37,176 p=5310 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 08:55:37,301 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user4)
+2025-07-17 08:55:37,405 p=5310 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user5)
+2025-07-17 08:55:37,405 p=5310 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 08:55:37,579 p=5310 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user5)
+2025-07-17 08:55:37,584 p=5310 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 08:55:37,599 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 08:55:37,601 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 08:55:37,601 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 08:55:37,602 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 08:55:37,607 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 08:55:37,608 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 08:55:37,609 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 08:55:37,609 p=5310 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:55:37,610 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 08:55:37,611 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 08:55:37,611 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 08:55:37,613 p=5310 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 08:55:38,002 p=5310 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 08:55:38,358 p=5310 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 08:55:38,723 p=5310 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 08:55:39,241 p=5310 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 08:55:39,635 p=5310 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 08:55:39,646 p=5310 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 08:55:39,646 p=5310 u=vagrant n=ansible INFO| centosvm1                  : ok=6    changed=1    unreachable=0    failed=0    skipped=7    rescued=0    ignored=0   
+2025-07-17 08:55:39,647 p=5310 u=vagrant n=ansible INFO| db_VM                      : ok=12   changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-07-17 08:55:39,647 p=5310 u=vagrant n=ansible INFO| web_VM                     : ok=5    changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:56:30,333 p=5648 u=vagrant n=ansible WARNING| [WARNING]: While constructing a mapping from /home/vagrant/shared_folder/ex14_roles/demo_role/tasks/useradd.yaml, line 12, column 3, found a duplicate dict key
+(when). Using last defined value only.
+
+2025-07-17 08:56:30,343 p=5648 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 08:56:30,350 p=5648 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 08:56:31,296 p=5648 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:56:31,296 p=5648 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:56:31,311 p=5648 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:56:31,311 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:41,321 p=5648 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 08:56:41,321 p=5648 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:56:41,327 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:56:41,341 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:41,343 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 08:56:41,347 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:41,350 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 08:56:41,366 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:41,370 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 08:56:41,372 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:41,376 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 08:56:41,391 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:41,397 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:42,014 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:42,021 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 08:56:42,034 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:42,041 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:42,649 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:42,655 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 08:56:42,668 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:42,675 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:43,280 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:43,285 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 08:56:43,303 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:43,315 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:43,681 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:43,687 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 08:56:43,711 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:43,726 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:44,075 p=5648 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 08:56:44,075 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:44,081 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 08:56:44,608 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:44,615 p=5648 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:56:44,637 p=5648 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:56:44,644 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 08:56:44,912 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:44,918 p=5648 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:56:44,935 p=5648 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:56:44,939 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 08:56:45,214 p=5648 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 08:56:45,215 p=5648 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 08:56:45,232 p=5648 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 08:56:45,236 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 08:56:45,602 p=5648 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 08:56:45,605 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user1)
+2025-07-17 08:56:45,667 p=5648 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 08:56:45,834 p=5648 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 08:56:45,838 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user2)
+2025-07-17 08:56:45,983 p=5648 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 08:56:46,067 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user3)
+2025-07-17 08:56:46,073 p=5648 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 08:56:46,285 p=5648 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 08:56:46,299 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user4)
+2025-07-17 08:56:46,304 p=5648 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 08:56:46,528 p=5648 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user5)
+2025-07-17 08:56:46,532 p=5648 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 08:56:46,601 p=5648 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 08:56:46,929 p=5648 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 08:56:46,936 p=5648 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 08:56:46,950 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 08:56:46,951 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 08:56:46,952 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 08:56:46,953 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 08:56:46,956 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 08:56:46,959 p=5648 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 08:56:46,964 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 08:56:46,967 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 08:56:46,969 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 08:56:46,972 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 08:56:46,973 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 08:56:46,975 p=5648 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 08:56:47,357 p=5648 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 08:56:47,876 p=5648 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 08:56:48,344 p=5648 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 08:56:48,789 p=5648 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 08:56:49,227 p=5648 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 08:56:49,245 p=5648 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 08:56:49,246 p=5648 u=vagrant n=ansible INFO| centosvm1                  : ok=5    changed=1    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 08:56:49,246 p=5648 u=vagrant n=ansible INFO| db_VM                      : ok=13   changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 08:56:49,247 p=5648 u=vagrant n=ansible INFO| web_VM                     : ok=5    changed=0    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 09:01:15,131 p=6006 u=vagrant n=ansible WARNING| [WARNING]: While constructing a mapping from /home/vagrant/shared_folder/ex14_roles/demo_role/tasks/useradd.yaml, line 12, column 3, found a duplicate dict key
+(when). Using last defined value only.
+
+2025-07-17 09:01:15,150 p=6006 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 09:01:15,157 p=6006 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 09:01:16,489 p=6006 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:01:16,489 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:16,491 p=6006 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:01:16,491 p=6006 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:01:31,495 p=6006 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:01:31,495 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:01:31,510 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:01:31,546 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:31,548 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 09:01:31,551 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:31,557 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:01:31,590 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:31,597 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 09:01:31,600 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:31,606 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 09:01:31,624 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:31,628 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:32,262 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:32,269 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 09:01:32,283 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:32,289 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:32,707 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:32,712 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 09:01:32,724 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:32,731 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:33,200 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:33,205 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 09:01:33,219 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:33,224 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:33,507 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:33,511 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 09:01:33,527 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:33,530 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:33,848 p=6006 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 09:01:33,849 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:33,856 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 09:01:34,413 p=6006 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:01:34,414 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:34,433 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:01:34,437 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 09:01:34,686 p=6006 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:01:34,687 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:34,712 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:01:34,717 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 09:01:35,017 p=6006 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:01:35,018 p=6006 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:01:35,035 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:01:35,040 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 09:01:35,395 p=6006 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 09:01:35,403 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user1)
+2025-07-17 09:01:35,444 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:01:35,621 p=6006 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 09:01:35,665 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user2)
+2025-07-17 09:01:35,724 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:01:35,857 p=6006 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 09:01:35,928 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user3)
+2025-07-17 09:01:35,996 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:01:36,083 p=6006 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 09:01:36,188 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user4)
+2025-07-17 09:01:36,289 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:01:36,307 p=6006 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 09:01:36,433 p=6006 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user5)
+2025-07-17 09:01:36,606 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:01:36,628 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:01:36,679 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:01:36,689 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:01:36,693 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:01:36,695 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:01:36,696 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:01:36,703 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:36,710 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:01:36,711 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:01:36,712 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:01:36,714 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:01:36,717 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:01:36,718 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:37,186 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:01:37,635 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:01:38,086 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:01:38,597 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:01:39,051 p=6006 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:01:39,057 p=6006 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:01:39,080 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:01:39,082 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:01:39,085 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:01:39,086 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:01:39,086 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:01:39,088 p=6006 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:01:39,093 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:01:39,095 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:01:39,096 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:01:39,098 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:01:39,099 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:01:39,100 p=6006 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:01:39,372 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user1)
+2025-07-17 09:01:39,628 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user2)
+2025-07-17 09:01:39,856 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user3)
+2025-07-17 09:01:40,055 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user4)
+2025-07-17 09:01:40,327 p=6006 u=vagrant n=ansible INFO| ok: [db_VM] => (item=user5)
+2025-07-17 09:01:40,339 p=6006 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 09:01:40,340 p=6006 u=vagrant n=ansible INFO| centosvm1                  : ok=5    changed=0    unreachable=0    failed=0    skipped=9    rescued=0    ignored=0   
+2025-07-17 09:01:40,340 p=6006 u=vagrant n=ansible INFO| db_VM                      : ok=14   changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 09:01:40,340 p=6006 u=vagrant n=ansible INFO| web_VM                     : ok=5    changed=0    unreachable=0    failed=0    skipped=9    rescued=0    ignored=0   
+2025-07-17 09:05:00,291 p=6405 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 09:05:00,299 p=6405 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 09:05:01,465 p=6405 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:05:01,466 p=6405 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:05:01,502 p=6405 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:05:01,502 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:11,507 p=6405 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:05:11,508 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:05:11,512 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:05:11,540 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:11,556 p=6405 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 09:05:11,558 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:11,569 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:05:11,589 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:11,591 p=6405 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 09:05:11,594 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:11,597 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 09:05:11,604 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:11,615 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:12,328 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:12,334 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 09:05:12,346 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:12,351 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:12,791 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:12,795 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 09:05:12,807 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:12,814 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:13,434 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:13,440 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 09:05:13,454 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:13,462 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:13,913 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:13,918 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 09:05:13,931 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:13,937 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:14,282 p=6405 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 09:05:14,284 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:14,290 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 09:05:14,943 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:14,949 p=6405 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:05:14,965 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:05:14,969 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 09:05:15,228 p=6405 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:05:15,229 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:15,251 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:05:15,256 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 09:05:15,537 p=6405 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:05:15,540 p=6405 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:05:15,558 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:05:15,562 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 09:05:15,918 p=6405 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 09:05:15,936 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user1)
+2025-07-17 09:05:15,985 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:05:16,188 p=6405 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 09:05:16,237 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user2)
+2025-07-17 09:05:16,302 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:05:16,418 p=6405 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 09:05:16,513 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user3)
+2025-07-17 09:05:16,596 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:05:16,653 p=6405 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 09:05:16,778 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user4)
+2025-07-17 09:05:16,887 p=6405 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 09:05:16,894 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:05:17,031 p=6405 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=user5)
+2025-07-17 09:05:17,155 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:05:17,161 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:05:17,180 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:05:17,181 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:05:17,181 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:05:17,182 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:05:17,183 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:05:17,185 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:17,191 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:05:17,192 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:05:17,194 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:05:17,195 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:05:17,197 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:05:17,199 p=6405 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:05:17,555 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:05:17,972 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:05:18,408 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:05:18,840 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:05:19,334 p=6405 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:05:19,353 p=6405 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:05:19,378 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:05:19,379 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:05:19,379 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:05:19,384 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:05:19,384 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:05:19,386 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 09:05:19,387 p=6405 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:05:19,388 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 09:05:19,389 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 09:05:19,390 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 09:05:19,390 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 09:05:19,392 p=6405 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:05:19,814 p=6405 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:05:20,188 p=6405 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:05:20,630 p=6405 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:05:20,990 p=6405 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:05:21,338 p=6405 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:05:21,348 p=6405 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 09:05:21,349 p=6405 u=vagrant n=ansible INFO| centosvm1                  : ok=6    changed=1    unreachable=0    failed=0    skipped=8    rescued=0    ignored=0   
+2025-07-17 09:05:21,349 p=6405 u=vagrant n=ansible INFO| db_VM                      : ok=13   changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2025-07-17 09:05:21,349 p=6405 u=vagrant n=ansible INFO| web_VM                     : ok=5    changed=0    unreachable=0    failed=0    skipped=9    rescued=0    ignored=0   
+2025-07-17 09:07:27,548 p=6811 u=vagrant n=ansible ERROR| ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected key. while parsing a block mapping
+  in "<unicode string>", line 4, column 3
+did not find expected key
+  in "<unicode string>", line 9, column 4
+
+The error appears to be in '/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/chrony.yaml': line 9, column 4, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    update_cache: yes
+   when: ansible_distribution == "Ubuntu"
+   ^ here
+
+2025-07-17 09:08:15,329 p=6822 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 09:08:15,337 p=6822 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 09:08:16,503 p=6822 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:08:16,504 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:16,526 p=6822 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:08:16,526 p=6822 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:08:26,512 p=6822 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:08:26,512 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:08:26,518 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:08:26,541 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:26,545 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 09:08:26,547 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:26,551 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:08:26,565 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:26,568 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 09:08:26,570 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:26,573 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 09:08:26,581 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:26,593 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:27,091 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:27,096 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 09:08:27,113 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:27,118 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:27,560 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:27,565 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 09:08:27,585 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:27,591 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:28,187 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:28,191 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 09:08:28,207 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:28,217 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:28,591 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:28,595 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 09:08:28,610 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:28,615 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:29,003 p=6822 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 09:08:29,003 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:29,008 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 09:08:29,504 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:29,507 p=6822 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:08:29,527 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:08:29,533 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 09:08:29,843 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:29,850 p=6822 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:08:29,869 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:08:29,874 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 09:08:30,167 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:30,168 p=6822 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:08:30,181 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:08:30,184 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 09:08:30,519 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 09:08:30,571 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:08:30,575 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:08:30,751 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 09:08:30,863 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:08:30,879 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:08:30,985 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 09:08:31,163 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:08:31,183 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:08:31,210 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 09:08:31,433 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 09:08:31,453 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:08:31,484 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:08:31,725 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:08:31,751 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:08:31,756 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:08:31,771 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:08:31,785 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:08:31,787 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:08:31,789 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:08:31,790 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:08:31,792 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:31,796 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:08:31,799 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:08:31,802 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:08:31,804 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:08:31,807 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:08:31,808 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:32,198 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:08:32,621 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:08:33,123 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:08:33,693 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:08:34,146 p=6822 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:08:34,154 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:08:34,189 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:08:34,205 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:08:34,206 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:08:34,208 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:08:34,208 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:08:34,214 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 09:08:34,217 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 09:08:34,217 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 09:08:34,218 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 09:08:34,218 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 09:08:34,218 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:34,219 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:08:34,605 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:08:34,901 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:08:35,251 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:08:35,740 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:08:36,196 p=6822 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:08:36,204 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on Ubuntu] ***********************************************************************************************************************
+2025-07-17 09:08:36,228 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=chrony) 
+2025-07-17 09:08:36,230 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=wget) 
+2025-07-17 09:08:36,231 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=git) 
+2025-07-17 09:08:36,234 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=zip) 
+2025-07-17 09:08:36,235 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=unzip) 
+2025-07-17 09:08:36,237 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:42,665 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=chrony)
+2025-07-17 09:08:43,555 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => (item=chrony)
+2025-07-17 09:08:44,675 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=wget)
+2025-07-17 09:08:45,928 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => (item=wget)
+2025-07-17 09:08:46,723 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=git)
+2025-07-17 09:08:48,084 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => (item=git)
+2025-07-17 09:08:48,724 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=zip)
+2025-07-17 09:08:50,167 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => (item=zip)
+2025-07-17 09:08:50,747 p=6822 u=vagrant n=ansible INFO| ok: [web_VM] => (item=unzip)
+2025-07-17 09:08:52,540 p=6822 u=vagrant n=ansible INFO| ok: [db_VM] => (item=unzip)
+2025-07-17 09:08:52,547 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on CentOS] ***********************************************************************************************************************
+2025-07-17 09:08:52,558 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=chrony) 
+2025-07-17 09:08:52,560 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=wget) 
+2025-07-17 09:08:52,562 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=git) 
+2025-07-17 09:08:52,566 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=zip) 
+2025-07-17 09:08:52,566 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=unzip) 
+2025-07-17 09:08:52,568 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=chrony) 
+2025-07-17 09:08:52,569 p=6822 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:08:52,569 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=wget) 
+2025-07-17 09:08:52,571 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=git) 
+2025-07-17 09:08:52,571 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=zip) 
+2025-07-17 09:08:52,574 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=unzip) 
+2025-07-17 09:08:52,576 p=6822 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:08:53,228 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=chrony)
+2025-07-17 09:08:53,815 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=wget)
+2025-07-17 09:08:54,449 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=git)
+2025-07-17 09:08:54,958 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=zip)
+2025-07-17 09:08:55,431 p=6822 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=unzip)
+2025-07-17 09:08:55,440 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Start and Enable chronyd service on Debian and CentOS] **********************************************************************************************
+2025-07-17 09:08:55,485 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:55,858 p=6822 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:08:55,913 p=6822 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:08:55,918 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on Ubuntu] *******************************************************************************************************************
+2025-07-17 09:08:55,937 p=6822 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:08:55,970 p=6822 u=vagrant n=ansible INFO| An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2025-07-17 09:08:55,971 p=6822 u=vagrant n=ansible INFO| fatal: [web_VM]: FAILED! => {"changed": false, "msg": "Could not find or access './template/ubuntu.conf.j2'\nSearched in:\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/./template/ubuntu.conf.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2025-07-17 09:08:55,972 p=6822 u=vagrant n=ansible INFO| An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2025-07-17 09:08:55,972 p=6822 u=vagrant n=ansible INFO| fatal: [db_VM]: FAILED! => {"changed": false, "msg": "Could not find or access './template/ubuntu.conf.j2'\nSearched in:\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/templates/./template/ubuntu.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/./template/ubuntu.conf.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2025-07-17 09:08:55,976 p=6822 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on CentOS] *******************************************************************************************************************
+2025-07-17 09:08:56,124 p=6822 u=vagrant n=ansible INFO| An exception occurred during task execution. To see the full traceback, use -vvv. The error was: If you are using a module and expect the file to exist on the remote, see the remote_src option
+2025-07-17 09:08:56,125 p=6822 u=vagrant n=ansible INFO| fatal: [centosvm1]: FAILED! => {"changed": false, "msg": "Could not find or access './template/centos.conf.j2'\nSearched in:\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/templates/./template/centos.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/./template/centos.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/templates/./template/centos.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/demo_role/tasks/./template/centos.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/templates/./template/centos.conf.j2\n\t/home/vagrant/shared_folder/ex14_roles/./template/centos.conf.j2 on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+2025-07-17 09:08:56,126 p=6822 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 09:08:56,126 p=6822 u=vagrant n=ansible INFO| centosvm1                  : ok=7    changed=2    unreachable=0    failed=1    skipped=11   rescued=0    ignored=0   
+2025-07-17 09:08:56,127 p=6822 u=vagrant n=ansible INFO| db_VM                      : ok=15   changed=2    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2025-07-17 09:08:56,127 p=6822 u=vagrant n=ansible INFO| web_VM                     : ok=7    changed=0    unreachable=0    failed=1    skipped=10   rescued=0    ignored=0   
+2025-07-17 09:10:12,219 p=7351 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 09:10:12,227 p=7351 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 09:10:13,400 p=7351 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:10:13,401 p=7351 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:10:13,744 p=7351 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:10:13,744 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:23,413 p=7351 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:10:23,414 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:10:23,418 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:10:23,434 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:23,439 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 09:10:23,439 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:23,442 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:10:23,455 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:23,458 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 09:10:23,461 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:23,464 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 09:10:23,473 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:23,486 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:24,159 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:24,163 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 09:10:24,176 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:24,181 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:24,533 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:24,539 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 09:10:24,554 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:24,564 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:25,278 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:25,283 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 09:10:25,295 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:25,300 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:25,616 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:25,622 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 09:10:25,641 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:25,655 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:25,996 p=7351 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 09:10:25,997 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:26,003 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 09:10:26,470 p=7351 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:10:26,481 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:26,500 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:10:26,505 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 09:10:26,780 p=7351 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:10:26,787 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:26,805 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:10:26,810 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 09:10:27,073 p=7351 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:10:27,074 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:27,098 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:10:27,101 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 09:10:27,416 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 09:10:27,475 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:10:27,503 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:10:27,643 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 09:10:27,781 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:10:27,787 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:10:27,879 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 09:10:28,071 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:10:28,085 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:10:28,114 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 09:10:28,335 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 09:10:28,378 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:10:28,413 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:10:28,647 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:10:28,691 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:10:28,697 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:10:28,720 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:10:28,720 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:10:28,722 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:10:28,723 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:10:28,724 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:10:28,727 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:10:28,727 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:28,729 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:10:28,730 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:10:28,732 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:10:28,733 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:10:28,735 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:29,128 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:10:29,595 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:10:30,056 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:10:30,456 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:10:30,954 p=7351 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:10:30,974 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:10:31,010 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:10:31,014 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:10:31,016 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:10:31,018 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:10:31,019 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:10:31,021 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:31,021 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 09:10:31,022 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 09:10:31,026 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 09:10:31,026 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 09:10:31,027 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 09:10:31,028 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:10:31,283 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:10:31,530 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:10:31,774 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:10:32,069 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:10:32,419 p=7351 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:10:32,432 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on Ubuntu] ***********************************************************************************************************************
+2025-07-17 09:10:32,473 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=chrony) 
+2025-07-17 09:10:32,474 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=wget) 
+2025-07-17 09:10:32,475 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=git) 
+2025-07-17 09:10:32,477 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=zip) 
+2025-07-17 09:10:32,480 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=unzip) 
+2025-07-17 09:10:32,481 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:34,580 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=chrony)
+2025-07-17 09:10:34,659 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => (item=chrony)
+2025-07-17 09:10:36,663 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=wget)
+2025-07-17 09:10:36,696 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => (item=wget)
+2025-07-17 09:10:38,670 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => (item=git)
+2025-07-17 09:10:38,693 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=git)
+2025-07-17 09:10:40,730 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=zip)
+2025-07-17 09:10:40,749 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => (item=zip)
+2025-07-17 09:10:42,741 p=7351 u=vagrant n=ansible INFO| ok: [web_VM] => (item=unzip)
+2025-07-17 09:10:42,845 p=7351 u=vagrant n=ansible INFO| ok: [db_VM] => (item=unzip)
+2025-07-17 09:10:42,852 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on CentOS] ***********************************************************************************************************************
+2025-07-17 09:10:42,871 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=chrony) 
+2025-07-17 09:10:42,872 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=wget) 
+2025-07-17 09:10:42,873 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=git) 
+2025-07-17 09:10:42,878 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=zip) 
+2025-07-17 09:10:42,878 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=unzip) 
+2025-07-17 09:10:42,881 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=chrony) 
+2025-07-17 09:10:42,881 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=wget) 
+2025-07-17 09:10:42,883 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=git) 
+2025-07-17 09:10:42,884 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:42,886 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=zip) 
+2025-07-17 09:10:42,886 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=unzip) 
+2025-07-17 09:10:42,887 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:10:43,618 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=chrony)
+2025-07-17 09:10:44,189 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=wget)
+2025-07-17 09:10:44,697 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=git)
+2025-07-17 09:10:45,256 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=zip)
+2025-07-17 09:10:45,896 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=unzip)
+2025-07-17 09:10:45,902 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Start and Enable chronyd service on Debian and CentOS] **********************************************************************************************
+2025-07-17 09:10:45,929 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:46,240 p=7351 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:10:46,246 p=7351 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:10:46,251 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on Ubuntu] *******************************************************************************************************************
+2025-07-17 09:10:46,273 p=7351 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:10:46,718 p=7351 u=vagrant n=ansible INFO| changed: [web_VM]
+2025-07-17 09:10:46,721 p=7351 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 09:10:46,725 p=7351 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on CentOS] *******************************************************************************************************************
+2025-07-17 09:10:46,740 p=7351 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:10:46,741 p=7351 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:10:47,239 p=7351 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:10:47,255 p=7351 u=vagrant n=ansible INFO| RUNNING HANDLER [demo_role : Restart chronyd service] *****************************************************************************************************************
+2025-07-17 09:10:47,659 p=7351 u=vagrant n=ansible INFO| changed: [web_VM]
+2025-07-17 09:10:47,671 p=7351 u=vagrant n=ansible INFO| changed: [db_VM]
+2025-07-17 09:10:47,671 p=7351 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 09:10:47,672 p=7351 u=vagrant n=ansible INFO| centosvm1                  : ok=8    changed=2    unreachable=0    failed=0    skipped=11   rescued=0    ignored=0   
+2025-07-17 09:10:47,672 p=7351 u=vagrant n=ansible INFO| db_VM                      : ok=17   changed=4    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2025-07-17 09:10:47,673 p=7351 u=vagrant n=ansible INFO| web_VM                     : ok=9    changed=2    unreachable=0    failed=0    skipped=11   rescued=0    ignored=0   
+2025-07-17 09:23:52,756 p=8026 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 09:23:52,764 p=8026 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 09:23:53,954 p=8026 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:23:53,954 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:23:53,955 p=8026 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:23:53,956 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:03,946 p=8026 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 09:24:03,946 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:24:03,953 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:24:03,975 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:03,980 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "course": "python"
+}
+2025-07-17 09:24:03,982 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:03,986 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:24:04,001 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:04,003 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "dbname": "devopsdb"
+}
+2025-07-17 09:24:04,008 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:04,015 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : debug] **********************************************************************************************************************************************
+2025-07-17 09:24:04,052 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:04,057 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => {
+    "msg": "value of dbuser is  devops"
+}
+2025-07-17 09:24:04,062 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:04,068 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Install mariadb pkg on db server] *******************************************************************************************************************
+2025-07-17 09:24:04,078 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:04,089 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:04,681 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:04,686 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : To enable service] **********************************************************************************************************************************
+2025-07-17 09:24:04,702 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:04,710 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:05,094 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:05,098 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Install python3-pymysql pkg] ************************************************************************************************************************
+2025-07-17 09:24:05,116 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:05,126 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:05,725 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:05,731 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Create a new database with name 'devopsdb'] *********************************************************************************************************
+2025-07-17 09:24:05,748 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:05,756 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:06,036 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:06,043 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Create database user with name 'devops' and password '12345' with all database privileges] **********************************************************
+2025-07-17 09:24:06,057 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:06,063 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:06,337 p=8026 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to true in
+community.mysql 4.0.0.
+
+2025-07-17 09:24:06,337 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:06,345 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 09:24:06,855 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:06,865 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:24:06,876 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:24:06,880 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 09:24:07,133 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:24:07,141 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:07,164 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:24:07,169 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Add group devopsgrp] ********************************************************************************************************************************
+2025-07-17 09:24:07,494 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:07,496 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:24:07,515 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:24:07,519 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Add multiple_users] *********************************************************************************************************************************
+2025-07-17 09:24:07,837 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user1)
+2025-07-17 09:24:07,903 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:24:07,906 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:24:08,086 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user2)
+2025-07-17 09:24:08,204 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:24:08,217 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:24:08,312 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user3)
+2025-07-17 09:24:08,500 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:24:08,531 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:24:08,549 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user4)
+2025-07-17 09:24:08,778 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=user5)
+2025-07-17 09:24:08,781 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:24:08,867 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:24:09,064 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:24:09,143 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:24:09,148 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:24:09,163 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:24:09,164 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:24:09,164 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:24:09,165 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:24:09,167 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:24:09,169 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:09,176 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user1) 
+2025-07-17 09:24:09,180 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user2) 
+2025-07-17 09:24:09,183 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user3) 
+2025-07-17 09:24:09,186 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user4) 
+2025-07-17 09:24:09,186 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=user5) 
+2025-07-17 09:24:09,187 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:09,461 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user1)
+2025-07-17 09:24:09,870 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user2)
+2025-07-17 09:24:10,335 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user3)
+2025-07-17 09:24:10,654 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user4)
+2025-07-17 09:24:10,989 p=8026 u=vagrant n=ansible INFO| changed: [db_VM] => (item=user5)
+2025-07-17 09:24:11,015 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Remove user] ****************************************************************************************************************************************
+2025-07-17 09:24:11,053 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user1) 
+2025-07-17 09:24:11,059 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user2) 
+2025-07-17 09:24:11,060 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user3) 
+2025-07-17 09:24:11,061 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user4) 
+2025-07-17 09:24:11,062 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=user5) 
+2025-07-17 09:24:11,067 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user1) 
+2025-07-17 09:24:11,068 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user2) 
+2025-07-17 09:24:11,070 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:11,070 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user3) 
+2025-07-17 09:24:11,071 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user4) 
+2025-07-17 09:24:11,073 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=user5) 
+2025-07-17 09:24:11,074 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:24:11,530 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user1)
+2025-07-17 09:24:11,929 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user2)
+2025-07-17 09:24:12,354 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user3)
+2025-07-17 09:24:12,849 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user4)
+2025-07-17 09:24:13,210 p=8026 u=vagrant n=ansible INFO| changed: [centosvm1] => (item=user5)
+2025-07-17 09:24:13,216 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on Ubuntu] ***********************************************************************************************************************
+2025-07-17 09:24:13,259 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=chrony) 
+2025-07-17 09:24:13,260 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=wget) 
+2025-07-17 09:24:13,266 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=git) 
+2025-07-17 09:24:13,268 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=zip) 
+2025-07-17 09:24:13,271 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1] => (item=unzip) 
+2025-07-17 09:24:13,272 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:15,434 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=chrony)
+2025-07-17 09:24:15,454 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => (item=chrony)
+2025-07-17 09:24:17,770 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=wget)
+2025-07-17 09:24:17,834 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => (item=wget)
+2025-07-17 09:24:19,884 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=git)
+2025-07-17 09:24:19,922 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => (item=git)
+2025-07-17 09:24:21,817 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=zip)
+2025-07-17 09:24:21,948 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => (item=zip)
+2025-07-17 09:24:23,856 p=8026 u=vagrant n=ansible INFO| ok: [web_VM] => (item=unzip)
+2025-07-17 09:24:28,401 p=8026 u=vagrant n=ansible INFO| ok: [db_VM] => (item=unzip)
+2025-07-17 09:24:28,408 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Install NTP server on CentOS] ***********************************************************************************************************************
+2025-07-17 09:24:28,425 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=chrony) 
+2025-07-17 09:24:28,426 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=wget) 
+2025-07-17 09:24:28,427 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=git) 
+2025-07-17 09:24:28,432 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=zip) 
+2025-07-17 09:24:28,435 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM] => (item=unzip) 
+2025-07-17 09:24:28,439 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=chrony) 
+2025-07-17 09:24:28,440 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:28,443 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=wget) 
+2025-07-17 09:24:28,443 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=git) 
+2025-07-17 09:24:28,444 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=zip) 
+2025-07-17 09:24:28,446 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM] => (item=unzip) 
+2025-07-17 09:24:28,448 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:24:29,188 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=chrony)
+2025-07-17 09:24:29,672 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=wget)
+2025-07-17 09:24:30,306 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=git)
+2025-07-17 09:24:30,805 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=zip)
+2025-07-17 09:24:31,315 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1] => (item=unzip)
+2025-07-17 09:24:31,329 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Start and Enable chronyd service on Debian and CentOS] **********************************************************************************************
+2025-07-17 09:24:31,394 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:31,716 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:24:31,717 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:31,721 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on Ubuntu] *******************************************************************************************************************
+2025-07-17 09:24:31,747 p=8026 u=vagrant n=ansible INFO| skipping: [centosvm1]
+2025-07-17 09:24:32,078 p=8026 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 09:24:32,079 p=8026 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 09:24:32,084 p=8026 u=vagrant n=ansible INFO| TASK [demo_role : Update chrony template on CentOS] *******************************************************************************************************************
+2025-07-17 09:24:32,099 p=8026 u=vagrant n=ansible INFO| skipping: [web_VM]
+2025-07-17 09:24:32,100 p=8026 u=vagrant n=ansible INFO| skipping: [db_VM]
+2025-07-17 09:24:32,596 p=8026 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 09:24:32,608 p=8026 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 09:24:32,608 p=8026 u=vagrant n=ansible INFO| centosvm1                  : ok=8    changed=2    unreachable=0    failed=0    skipped=12   rescued=0    ignored=0   
+2025-07-17 09:24:32,609 p=8026 u=vagrant n=ansible INFO| db_VM                      : ok=17   changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2025-07-17 09:24:32,609 p=8026 u=vagrant n=ansible INFO| web_VM                     : ok=8    changed=0    unreachable=0    failed=0    skipped=12   rescued=0    ignored=0   
+2025-07-17 12:37:19,107 p=1985 u=vagrant n=ansible INFO| Encryption successful
+2025-07-17 12:37:55,135 p=2004 u=vagrant n=ansible INFO| Decryption successful
+2025-07-17 12:38:15,934 p=2010 u=vagrant n=ansible INFO| Encryption successful
+2025-07-17 12:41:46,341 p=2044 u=vagrant n=ansible INFO| PLAY [Install multiple package in ubuntu] *****************************************************************************************************************************
+2025-07-17 12:41:46,378 p=2044 u=vagrant n=ansible INFO| TASK [Gathering Facts] ************************************************************************************************************************************************
+2025-07-17 12:41:47,804 p=2044 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 12:41:47,804 p=2044 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 12:41:47,889 p=2044 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could
+change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 12:41:47,890 p=2044 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 12:41:57,884 p=2044 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host centosvm1 is using the discovered Python interpreter at /usr/bin/python3.9, but future installation of another Python interpreter
+could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-17 12:41:57,884 p=2044 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 12:41:57,891 p=2044 u=vagrant n=ansible INFO| TASK [demo_role : Add SSH banner] *************************************************************************************************************************************
+2025-07-17 12:41:58,442 p=2044 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 12:41:58,446 p=2044 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 12:41:58,468 p=2044 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 12:41:58,473 p=2044 u=vagrant n=ansible INFO| TASK [demo_role : Update sshd_config for ssh bannner] *****************************************************************************************************************
+2025-07-17 12:41:58,798 p=2044 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-17 12:41:58,799 p=2044 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-17 12:41:58,823 p=2044 u=vagrant n=ansible INFO| ok: [centosvm1]
+2025-07-17 12:41:58,833 p=2044 u=vagrant n=ansible INFO| PLAY RECAP ************************************************************************************************************************************************************
+2025-07-17 12:41:58,833 p=2044 u=vagrant n=ansible INFO| centosvm1                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 12:41:58,834 p=2044 u=vagrant n=ansible INFO| db_VM                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 12:41:58,834 p=2044 u=vagrant n=ansible INFO| web_VM                     : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-17 12:48:47,234 p=2219 u=vagrant n=ansible ERROR| ERROR! input is already encrypted
+2025-07-17 12:49:04,397 p=2222 u=vagrant n=ansible INFO| Rekey successful

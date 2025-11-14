@@ -1,0 +1,39 @@
+---
+- name: Provision server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add SSH banner #To add the message
+      copy:
+        dest: /etc/banner.txt
+        content: |
+          ***************************************
+          Welcome to Ansible-Managed Server!
+          If you are not an authorized user,
+          please logout immediately.
+          ***************************************
+
+    - name: Update sshd_config for ssh bannner #To update the message
+      become: yes
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        regexp: "#Banner none" #Search for this line
+        line: "Banner /etc/banner.txt" #Replacing with this line
+        state: present
+      notify:
+        - Restart sshd service on ubuntu
+        - Restart sshd service on Centos
+
+  
+  handlers:
+    - name: Restart sshd service on ubuntu
+      service:
+        name: ssh
+        state: restarted
+      # when: ansible_distribution == "Ubuntu"
+
+    - name: Restart sshd service on Centos
+      service:
+        name: sshd
+        state: restarted
+      # when: ansible_distribution == "CentOS"

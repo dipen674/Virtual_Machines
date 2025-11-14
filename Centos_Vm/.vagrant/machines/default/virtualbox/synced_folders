@@ -1,0 +1,1 @@
+{"rsync":{"/vagrant":{"type":"rsync","guestpath":"/vagrant","hostpath":"/media/dipendra/Windows/Windows_Linux/virtual_machines/Ansible/ansible_centos","disabled":false,"__vagrantfile":true,"owner":"vagrant","group":"vagrant"}}}

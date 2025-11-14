@@ -1,0 +1,56 @@
+---
+- name: Provision server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install NTP server on Ubuntu
+      apt:
+        name: "{{item}}"
+        state: present
+        update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+      loop:
+       - chrony
+       - wget
+       - git
+       - zip
+       - unzip
+    - name: Install NTP server on CentOS
+      yum:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == "CentOS"
+      loop:
+       - chrony
+       - wget
+       - git
+       - zip
+       - unzip
+    - name: Start and Enable chronyd service on Debian and CentOS
+      service:
+       name: chronyd
+       state: started
+       enabled: yes
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: Update chrony template on Ubuntu
+      template:
+        src: ./template/ubuntu.conf.j2
+        dest: /etc/chrony/chrony.conf
+      notify: 
+        - Restart chronyd service 
+      when: ansible_distribution == "Ubuntu"
+    
+    - name: Update chrony template on CentOS
+      template:
+        src: ./template/centos.conf.j2
+        dest: /etc/chrony.conf
+      notify: 
+        - Restart chronyd service
+      when: ansible_distribution == "CentOS"
+
+  handlers:
+    - name: Restart chronyd service
+      service:
+        name: chronyd
+        state: restarted

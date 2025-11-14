@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/sf_sonar":{"guestpath":"/home/vagrant/sf_sonar","hostpath":"/home/dipendra/Desktop/Devops/virtual_machines/Nexus_Sonar/sf_sonar","disabled":false,"__vagrantfile":true},"/vagrant":{"disabled":false,"guestpath":"/vagrant","hostpath":"/home/dipendra/Desktop/Devops/virtual_machines/Nexus_Sonar","__vagrantfile":true}}}

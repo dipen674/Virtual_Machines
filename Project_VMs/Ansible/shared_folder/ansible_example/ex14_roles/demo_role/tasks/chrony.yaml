@@ -1,0 +1,50 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for demo_role
+- name: Install NTP server on Ubuntu
+  apt:
+    name: "{{item}}"
+    state: present
+    update_cache: yes
+  when: ansible_distribution == "Ubuntu"
+  loop:
+    - chrony
+    - wget
+    - git
+    - zip
+    - unzip
+- name: Install NTP server on CentOS
+  yum:
+    name: "{{item}}"
+    state: present
+  when: ansible_distribution == "CentOS"
+  loop:
+    - chrony
+    - wget
+    - git
+    - zip
+    - unzip
+
+- name: Start and Enable chronyd service on Debian and CentOS
+  service:
+    name: chronyd
+    state: started
+    enabled: yes
+  when: ansible_distribution == "Ubuntu"
+ 
+- name: Update chrony template on Ubuntu
+  template:
+    src: ubuntu.conf.j2
+    dest: /etc/chrony/chrony.conf
+  notify: 
+    - Restart chronyd service 
+  when: ansible_distribution == "Ubuntu"
+ 
+- name: Update chrony template on CentOS
+  template:
+    src: centos.conf.j2
+    dest: /etc/chrony.conf
+  notify: 
+    - Restart chronyd service
+  when: ansible_distribution == "CentOS"
+ 

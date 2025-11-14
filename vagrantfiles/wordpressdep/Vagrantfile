@@ -1,0 +1,110 @@
+
+Vagrant.configure("2") do |config|
+config.vm.provision "shell", inline: "echo running provision script" 
+  config.vm.define "web" do |web|
+
+   web.vm.box = "bento/ubuntu-24.04"
+   web.vm.box_version = "202502.21.0"
+
+   #assign you local host ip
+   web.vm.network "private_network", ip: "192.168.56.201"
+
+
+   web.vm.network "public_network", bridge: "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)"
+
+   #can change bride based on the network adapter of your PC
+
+   web.vm.synced_folder "../wordpressdep", "/vagrant"
+
+   web.vm.provider "virtualbox" do |vb|
+      vb.memory = "2024"
+      vb.cpus = 3
+    end
+
+    web.vm.provision "shell", inline: <<-SHELL
+      sudo hostnamectl set-hostname webserver
+      apt-get update
+      sudo apt install -y apache2 \
+        ghostscript \
+        libapache2-mod-php \
+        php \
+        php-bcmath \
+        php-curl \
+        php-imagick \
+        php-intl \
+        php-json \
+        php-mbstring \
+        php-mysql \
+        php-xml \
+        php-zip
+      
+      sudo mkdir -p /srv/www
+      sudo chown -R www-data:www-data /srv/www
+      sudo curl https://wordpress.org/latest.tar.gz | sudo -u www-data tar zx -C /srv/www
+
+      sudo tee /etc/apache2/sites-available/wordpress.conf <<EOF
+        <VirtualHost *:80>
+          DocumentRoot /srv/www/wordpress
+          <Directory /srv/www/wordpress>
+              Options FollowSymLinks
+              AllowOverride Limit Options FileInfo
+              DirectoryIndex index.php
+              Require all granted
+          </Directory>
+          <Directory /srv/www/wordpress/wp-content>
+              Options FollowSymLinks
+              Require all granted
+          </Directory>
+      </VirtualHost>
+EOF
+
+      sudo a2ensite wordpress.conf
+      sudo systemctl reload apache2
+      sudo a2enmod rewrite
+      sudo systemctl restart apache2
+
+      sudo a2dissite 000-default
+
+      sudo systemctl restart apache2
+
+      sudo -u www-data cp /srv/www/wordpress/wp-config-sample.php /srv/www/wordpress/wp-config.php
+
+      sudo -u www-data sed -i 's/database_name_here/devopsdb/' /srv/www/wordpress/wp-config.php
+      sudo -u www-data sed -i 's/username_here/mydbuser/' /srv/www/wordpress/wp-config.php
+      sudo -u www-data sed -i 's/password_here/Demo@123/' /srv/www/wordpress/wp-config.php
+      sudo -u www-data sed -i 's/localhost/192.168.56.202/'  /srv/www/wordpress/wp-config.php
+
+  SHELL
+end
+  config.vm.define "db" do |db|
+   db.vm.box = "bento/ubuntu-24.04"
+   db.vm.box_version = "202502.21.0"
+
+   db.vm.network "private_network", ip: "192.168.56.202"
+
+   db.vm.network "public_network", bridge: "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)"
+
+   db.vm.synced_folder "../wordpressdep", "/vagrant"
+
+      db.vm.provider "virtualbox" do |vb|
+       vb.memory = "1024"
+       vb.cpus = 1
+    end
+  db.vm.provision "shell", inline: <<-SHELL
+     sudo hostnamectl set-hostname dbserver
+     apt-get update
+     sudo apt install -y mysql-server
+
+     sudo mysql -e "Create database if not exists devopsdb;"
+     sudo mysql -e "create user if not exists 'mydbuser'@'192.168.56.201' Identified by 'Demo@123';"
+     sudo mysql -e "Grant all privileges on devopsdb.* to 'mydbuser'@'192.168.56.201';"
+     sudo mysql -e "Flush privileges;"
+        
+    sudo sed -i "s/127.0.0.1/192.168.56.202/g" /etc/mysql/mysql.conf.d/mysqld.cnf
+    
+    sudo systemctl restart mysql
+  SHELL
+
+  end
+  
+end

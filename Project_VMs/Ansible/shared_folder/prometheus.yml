@@ -1,0 +1,126 @@
+global:
+  scrape_interval: 15s 
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+            - 192.168.56.210:9093 #Added ip and port of the alert manager
+          # - alertmanager:9093
+
+rule_files:
+  - rules.yml
+scrape_configs:
+  - job_name: "prometheus"
+
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          app: "prometheus"
+
+  - job_name: "Ansible"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.210:9100"]
+        labels:
+          vm: "Ansible_VM_Nodeexporter"
+
+  - job_name: "Production"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.211:9100"]
+        labels:
+          vm: "Production_VM"
+
+
+  - job_name: "Deployment"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.212:9100"]
+        labels:
+          vm: "Deployment_VM"
+
+  - job_name: "Jenkins"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.150:9100"]
+        labels:
+          vm: "Jenkins_VM"
+
+  - job_name: "Nexus_Sonar"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.6:9100"]
+        labels:
+          vm: "Nexus-Sonar_VM"
+
+
+  - job_name: "Harbor"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: dipu
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.220:9100"]
+        labels:
+          vm: "Docker-harbor_VM"
+  - job_name: "Harbor_Docker"
+    static_configs:
+      - targets: ["192.168.56.220:9323"]
+
+
+  - job_name: "Deployment_Docker"
+    static_configs:
+      - targets: ["192.168.56.212:9323"]
+
+  - job_name: "Production_Docker"
+    static_configs:
+      - targets: ["192.168.56.211:9323"]      
+        
+  - job_name: "Harbor_cAdvisor"
+    static_configs:
+      - targets: ["192.168.56.220:8085"]
+        
+  - job_name: "Deployment_cAdvisor"
+    static_configs:
+      - targets: ["192.168.56.212:8085"]
+  
+  - job_name: "Production_cAdvisor"
+    static_configs:
+      - targets: ["192.168.56.211:8085"]
+        
+

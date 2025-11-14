@@ -1,0 +1,44 @@
+- debug:
+    var: course
+
+
+- debug:
+    var: dbname
+
+- debug:
+    msg: "value of dbuser is  {{dbuser}}"
+    
+
+- name: Install mariadb pkg on db server
+  apt:
+    name: mariadb-server
+    state: present
+
+- name: To enable service
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+
+
+- name: Install python3-pymysql pkg
+  apt:
+    name: python3-pymysql
+    state: present
+ #autoremove: yes
+ #purge: yes
+
+
+- name: Create a new database with name 'devopsdb'
+  mysql_db:
+    name: '{{dbname}}'
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock
+
+- name: Create database user with name 'devops' and password '12345' with all database privileges
+  mysql_user:
+    name: "{{dbuser}}"
+    password: "{{dbpass}}"
+    priv: '*.*:ALL'
+    state: present
+    login_unix_socket: /run/mysqld/mysqld.sock

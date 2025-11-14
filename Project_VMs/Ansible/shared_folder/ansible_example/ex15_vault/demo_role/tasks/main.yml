@@ -1,0 +1,20 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for demo_role
+
+#- name: Install database on db_VM
+# ansible.builtin.import_tasks: setupdb.yaml
+#  when: inventory_hostname == 'db_VM'
+
+
+- name: Setup banner in all hosts
+  import_tasks: banner.yaml
+
+
+    #- name: Add users and remove users
+    # import_tasks: useradd.yaml
+
+
+    #- name: Update NTP server files[chronyd services]
+    # import_tasks: chrony.yaml
+

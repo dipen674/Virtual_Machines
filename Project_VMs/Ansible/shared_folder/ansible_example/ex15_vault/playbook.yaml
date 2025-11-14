@@ -1,0 +1,8 @@
+- name: Install multiple package in ubuntu
+  hosts: all
+  become: yes
+  roles:
+    - role: demo_role
+      vars:
+        course: python
+

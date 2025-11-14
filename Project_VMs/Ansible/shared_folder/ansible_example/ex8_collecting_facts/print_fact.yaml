@@ -1,0 +1,16 @@
+---
+- name: Facts collection
+  hosts: web_VM
+  tasks:
+    - name: get OS distribution
+      debug:
+        var: ansible_distribution
+
+    - name: Get memory info
+      debug:
+        var: ansible_memory_mb
+
+
+    - name: Get free memory information
+      debug:
+        var: ansible_memory_mb.real.free

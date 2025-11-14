@@ -1,0 +1,89 @@
+global:
+  scrape_interval: 15s 
+  evaluation_interval: 15s
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+rule_files:
+  #  - rules.yml
+
+scrape_configs:
+  - job_name: "prometheus"
+
+    static_configs:
+      - targets: ["localhost:9090"]
+        labels:
+          app: "prometheus"
+
+
+  - job_name: "PrometheusVM"
+    static_configs:
+      #node_exporter machine_ip and node_exporter port
+      - targets: ["192.168.56.70:9100"]
+        labels: 
+          app: "Node_exporter_VM"
+
+  - job_name: "Node_exporter_next_vm"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: test123
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.71:9100"]
+        labels:
+          vm: "Another vm machine"
+
+  - job_name: "Node_exporter_next_vm"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: test123
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.71:9100"]
+        labels:
+          vm: "Another vm machine"
+  - job_name: "Node_exporter_next_vm"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: test123
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.71:9100"]
+        labels:
+          vm: "Another vm machine"
+  - job_name: "Node_exporter_next_vm"
+    scheme: https
+    basic_auth:
+      username: dipen
+      password: test123
+    tls_config:
+      ca_file: /etc/prometheus/node_exporter.crt
+      insecure_skip_verify: true
+    static_configs:
+      - targets: ["192.168.56.71:9100"]
+        labels:
+          vm: "Another vm machine"
+
+
+
+  - job_name: "Docker_engine"
+    static_configs:
+      - targets: ["192.168.56.71:9323"]
+
+
+  - job_name: "cAdvisor"
+    static_configs:
+      - targets: ["192.168.56.71:8080"]

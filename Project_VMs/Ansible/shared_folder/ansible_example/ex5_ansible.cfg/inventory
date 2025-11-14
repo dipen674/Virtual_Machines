@@ -1,0 +1,24 @@
+web_VM ansible_host=192.168.56.211 ansible_ssh_private_key_file=/home/vagrant/ansible/example3/ansible_key
+
+db_VM ansible_host=192.168.56.212 ansible_user=vagrant ansible_ssh_private_key_file=/home/vagrant/ansible/example3/ansible_key
+
+
+#centosvm1 ansible_host=192.168.56.212 ansible_user=vagrant ansible_ssh_private_key_file=/home/vagrant/ansible_examples/example3/ansible_key
+
+[webser]  #to create group
+web_VM
+
+[webser:vars]
+ansible_user=vagrant
+
+
+[dbser]   # TO create group
+#centosvm1
+db_VM
+
+#To create group of group
+[myservergrp:children]
+webser
+dbser
+
+

@@ -1,0 +1,18 @@
+#SPDX-License-Identifier: MIT-0
+---
+# vars file for demo_role
+dbname: devopsdb
+dbuser: devops
+dbpass: devops@123
+
+course: DevOps
+
+
+
+usernames:
+- user1
+- user2
+- user3
+- user4
+- user5
+

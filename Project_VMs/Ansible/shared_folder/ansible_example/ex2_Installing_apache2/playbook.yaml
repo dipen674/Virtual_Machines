@@ -1,0 +1,18 @@
+---
+- name: Setup Webserver             #Defining name of the service
+  hosts: vm1                        #Mentioning which host we are using
+  become: true                      #Providing sudo permission
+  tasks:                            #Defining tasks
+    - name: Install apache2 pkg     #Giving a name to the task
+      apt:                          #Defining module Which module we want to use
+        name: apache2               #Which service
+        state: present              #In which state we want the service
+    - name: To enable apache2 service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+    - name: Updated index.html file
+      copy:
+        src: index.html
+        dest: /var/www/html/

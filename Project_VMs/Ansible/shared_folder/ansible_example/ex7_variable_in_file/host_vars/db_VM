@@ -1,0 +1,5 @@
+dbname: devopsdb
+dbuser: devops
+dbpass: devops@123
+
+course: DevOps

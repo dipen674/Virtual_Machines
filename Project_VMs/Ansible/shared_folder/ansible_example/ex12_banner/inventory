@@ -1,0 +1,20 @@
+web_VM ansible_host=192.168.56.211 ansible_ssh_private_key_file=/home/vagrant/keys/ansible_key
+
+centosvm1 ansible_host=192.168.56.213 ansible_user=vagrant ansible_ssh_private_key_file=/home/vagrant/keys/ansible_key
+ 
+db_VM ansible_host=192.168.56.212 ansible_ssh_private_key_file=/home/vagrant/keys/ansible_key
+
+[webser] 
+web_VM
+db_VM
+
+[webser:vars]
+ansible_user=vagrant
+
+[centvm] 
+centosvm1
+
+[myservergrp:children]
+webser
+centvm
+

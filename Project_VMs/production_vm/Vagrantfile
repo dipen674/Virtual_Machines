@@ -1,0 +1,28 @@
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "bento/ubuntu-24.04"
+  config.vm.box_version = "202502.21.0"
+
+  config.vm.hostname = "Production"
+
+  config.vm.network "private_network", ip: "192.168.56.211"
+
+#config.vm.network "public_network", bridge: "Killer(TM) Wi-Fi 7 BE1750x 320MHz Wireless Network Adapter (BE200NGW)"
+
+
+  
+  # config.vm.synced_folder "../Ubuntu24.04", "/home/ubuntu"
+
+  # config.vm.synced_folder ".", "/vagrant", disabled: false
+
+  config.vm.provider "virtualbox" do |vb|
+  vb.name = "Production_Server"
+  vb.memory = 2000  
+  vb.cpus = 2
+  end
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+  #   apt-get install -y apache2
+  SHELL
+end

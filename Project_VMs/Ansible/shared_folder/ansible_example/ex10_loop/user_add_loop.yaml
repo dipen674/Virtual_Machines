@@ -1,0 +1,33 @@
+---
+- name: Install multiple package in ubuntu
+  hosts: all
+  become: yes
+  tasks:
+    - name: Installed multiple packages on ubuntu
+      apt:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == "Ubuntu"
+      loop:
+        - apache2
+        - git
+        - wget
+        - net-tools
+        - chrony
+
+    - name: Installed packages
+      yum:
+        name: mariadb-server
+        state: present
+      when: ansible_distribution == "CentOS"
+
+    - name: Add group devopsgrp
+      group:
+        name: devopsgrp
+        state: present
+
+    - name: Add multiple_users
+      user:
+        name: "{{item}}"
+        group: devopsgrp
+      loop: "{{usernames}}"

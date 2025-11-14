@@ -1,0 +1,27 @@
+- name: Add group devopsgrp
+  group:
+    name: devopsgrp
+    state: present
+
+- name: Add multiple_users
+  user:
+    name: "{{item}}"
+    group: devopsgrp
+  loop: "{{usernames}}"
+
+- name: Remove user
+  user:
+    name: "{{item}}"  # Replace with the user to remove
+    state: absent
+    remove: true
+  loop: "{{usernames}}"
+  when: inventory_hostname == "db_VM"
+
+
+- name: Remove user
+  user:
+    name: "{{item}}"  # Replace with the user to remove
+    state: absent
+    remove: true
+  loop: "{{usernames}}"
+  when: ansible_distribution == "CentOS"

@@ -1,0 +1,231 @@
+groups:
+  - name: my-alerts
+    interval: 15s   # how often to evaluate rules
+    rules:
+      - alert: Nexus_Sonar_Down
+        expr: up{job="Nexus_Sonar"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Prometheus_Node_Down
+        expr: up{job="Prometheus"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Ansible_Node_Down
+        expr: up{job="Ansible"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Production_Node_Down
+        expr: up{job="Production"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Deployment_Node_Down
+        expr: up{job="Deployment"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Jenkins_Node_Down
+        expr: up{job="Jenkins"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Harbor_Node_Down
+        expr: up{job="Harbor"} == 0
+        for: 2m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} is currently DOWN"
+
+      - alert: Harbor_Docker_Engine_Down
+        expr: up{job="Harbor_Docker"} == 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "🚨 Docker engine on {{ $labels.instance }} is currently DOWN"
+
+      - alert: Deployment_Docker_Engine_Down
+        expr: up{job="Deployment_Docker"} == 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "🚨 Docker engine on {{ $labels.instance }} is currently DOWN"
+
+      - alert: Production_Docker_Engine_Down
+        expr: up{job="Production_Docker"} == 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "🚨 Docker engine on {{ $labels.instance }} is currently DOWN"
+
+      - alert: Harbor_cAdvisor_Down
+        expr: up{job="Harbor_cAdvisor"} == 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} (frontend) is currently DOWN"
+
+      - alert: Deployment_cAdvisor_Down
+        expr: up{job="Deployment_cAdvisor"} == 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} (frontend) is currently DOWN"
+
+      - alert: Production_cAdvisor_Down
+        expr: up{job="Production_cAdvisor"} == 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "🚨 instance {{ $labels.instance }} (frontend) is currently DOWN"
+
+      # --------------- RECOVERY (UP) alerts ---------------
+      # These only fire when the target was recently changed and is now up.
+
+      - alert: Ansible_Recovered
+        expr: up{job="Ansible"} == 1 and changes(up{job="Ansible"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Production_Recovered
+        expr: up{job="Production"} == 1 and changes(up{job="Production"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Deployment_Recovered
+        expr: up{job="Deployment"} == 1 and changes(up{job="Deployment"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Jenkins_Recovered
+        expr: up{job="Jenkins"} == 1 and changes(up{job="Jenkins"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Nexus_Sonar_Recovered
+        expr: up{job="Nexus_Sonar"} == 1 and changes(up{job="Nexus_Sonar"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Harbor_Recovered
+        expr: up{job="Harbor"} == 1 and changes(up{job="Harbor"}[5m]) > 0
+        for: 0m
+        labels:
+          team: infra
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Harbor_Docker_Recovered
+        expr: up{job="Harbor_Docker"} == 1 and changes(up{job="Harbor_Docker"}[5m]) > 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "✅ Docker engine on {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Deployment_Docker_Recovered
+        expr: up{job="Deployment_Docker"} == 1 and changes(up{job="Deployment_Docker"}[5m]) > 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "✅ Docker engine on {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Production_Docker_Recovered
+        expr: up{job="Production_Docker"} == 1 and changes(up{job="Production_Docker"}[5m]) > 0
+        for: 0m
+        labels:
+          team: microservices
+          env: prod
+        annotations:
+          message: "✅ Docker engine on {{ $labels.instance }} has RECOVERED (UP)"
+
+      - alert: Harbor_cAdvisor_Recovered
+        expr: up{job="Harbor_cAdvisor"} == 1 and changes(up{job="Harbor_cAdvisor"}[5m]) > 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} (frontend) has RECOVERED (UP)"
+
+      - alert: Deployment_cAdvisor_Recovered
+        expr: up{job="Deployment_cAdvisor"} == 1 and changes(up{job="Deployment_cAdvisor"}[5m]) > 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} (frontend) has RECOVERED (UP)"
+
+      - alert: Production_cAdvisor_Recovered
+        expr: up{job="Production_cAdvisor"} == 1 and changes(up{job="Production_cAdvisor"}[5m]) > 0
+        for: 0m
+        labels:
+          team: Frontend
+          env: dev
+        annotations:
+          message: "✅ instance {{ $labels.instance }} (frontend) has RECOVERED (UP)"

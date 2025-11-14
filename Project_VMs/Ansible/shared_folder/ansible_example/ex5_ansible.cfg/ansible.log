@@ -1,0 +1,72 @@
+2025-07-10 13:41:40,732 p=4355 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************
+2025-07-10 13:41:40,756 p=4355 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-07-10 13:41:49,626 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:41:49,626 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:49,694 p=4355 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************
+2025-07-10 13:41:54,281 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:54,332 p=4355 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************
+2025-07-10 13:41:57,746 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:41:57,773 p=4355 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************
+2025-07-10 13:42:01,598 p=4355 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:42:01,622 p=4355 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************
+2025-07-10 13:42:01,636 p=4355 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************
+2025-07-10 13:42:08,715 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another
+Python interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-
+core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-07-10 13:42:08,717 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:08,734 p=4355 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************
+2025-07-10 13:42:12,365 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:12,378 p=4355 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************
+2025-07-10 13:42:14,857 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:14,870 p=4355 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************
+2025-07-10 13:42:18,483 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:18,514 p=4355 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************
+2025-07-10 13:42:20,989 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:21,012 p=4355 u=vagrant n=ansible INFO| TASK [Create database user with name 'devops' and password '12345' with all database privileges] ***********************************************
+2025-07-10 13:42:23,478 p=4355 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be
+changed to true in community.mysql 4.0.0.
+
+2025-07-10 13:42:23,479 p=4355 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| db_VM                      : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 13:42:23,482 p=4355 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 13:59:36,940 p=4594 u=vagrant n=ansible INFO| PLAY [Setup Webserver] *************************************************************************************************************************************
+2025-07-10 13:59:36,977 p=4594 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 13:59:43,702 p=4594 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host web_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 13:59:43,703 p=4594 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:59:43,759 p=4594 u=vagrant n=ansible INFO| TASK [Install apache2 pkg] *********************************************************************************************************************************
+2025-07-10 13:59:47,849 p=4594 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:59:47,883 p=4594 u=vagrant n=ansible INFO| TASK [To enable apache2 service] ***************************************************************************************************************************
+2025-07-10 13:59:50,944 p=4594 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:59:50,972 p=4594 u=vagrant n=ansible INFO| TASK [Updated index.html file] *****************************************************************************************************************************
+2025-07-10 13:59:54,348 p=4594 u=vagrant n=ansible INFO| ok: [web_VM]
+2025-07-10 13:59:54,357 p=4594 u=vagrant n=ansible INFO| PLAY [setup database server] *******************************************************************************************************************************
+2025-07-10 13:59:54,367 p=4594 u=vagrant n=ansible INFO| TASK [Gathering Facts] *************************************************************************************************************************************
+2025-07-10 14:00:00,836 p=4594 u=vagrant n=ansible WARNING| [WARNING]: Platform linux on host db_VM is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python
+interpreter could change the meaning of that path. See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more
+information.
+
+2025-07-10 14:00:00,837 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:00,849 p=4594 u=vagrant n=ansible INFO| TASK [Install mariadb pkg on db server] ********************************************************************************************************************
+2025-07-10 14:00:04,231 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:04,243 p=4594 u=vagrant n=ansible INFO| TASK [To enable service] ***********************************************************************************************************************************
+2025-07-10 14:00:06,320 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:06,346 p=4594 u=vagrant n=ansible INFO| TASK [Install python3-pymysql pkg] *************************************************************************************************************************
+2025-07-10 14:00:09,828 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:09,858 p=4594 u=vagrant n=ansible INFO| TASK [Create a new database with name 'devopsdb'] **********************************************************************************************************
+2025-07-10 14:00:12,196 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:12,211 p=4594 u=vagrant n=ansible INFO| TASK [Create database user with name 'devops' and password '12345' with all database privileges] ***********************************************************
+2025-07-10 14:00:14,378 p=4594 u=vagrant n=ansible WARNING| [WARNING]: Option column_case_sensitive is not provided. The default is now false, so the column's name will be uppercased. The default will be changed to
+true in community.mysql 4.0.0.
+
+2025-07-10 14:00:14,379 p=4594 u=vagrant n=ansible INFO| ok: [db_VM]
+2025-07-10 14:00:14,380 p=4594 u=vagrant n=ansible INFO| PLAY RECAP *************************************************************************************************************************************************
+2025-07-10 14:00:14,381 p=4594 u=vagrant n=ansible INFO| db_VM                      : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-07-10 14:00:14,381 p=4594 u=vagrant n=ansible INFO| web_VM                     : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
