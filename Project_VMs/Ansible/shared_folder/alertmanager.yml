@@ -18,7 +18,7 @@ receivers:
 
   - name: slack
     slack_configs:
-      - api_url: https://hooks.slack.com/services/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
+      - api_url:
         channel: '#java_application_tm'
         title: '{{ .GroupLabels.team }} has alerts in env: {{ .GroupLabels.env }}'
         text: '{{ range .Alerts }}{{ .Annotations.message }}{{ "\n" }}{{ end }}' # list all messages
