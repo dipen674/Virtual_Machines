@@ -19,8 +19,10 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
    	echo "Installing dependencies ..."
 	sudo apt-get update
+        sudo apt install curl
 	echo Installing Docker...
 	curl -sSL https://get.docker.com/ | sh
 	sudo usermod -aG docker vagrant
+        vagrant reload
    SHELL
 end
